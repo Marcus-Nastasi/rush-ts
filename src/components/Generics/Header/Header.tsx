@@ -74,9 +74,9 @@ export default function Header() {
 
                <section className="mb-3 md:mb-0 md:mx-2">
                   <h3 onMouseOver={handleHoverHeadshop} id="btnMenu1" className="uppercase p-1 hover:cursor-pointer hover:text-red-600 transition-none">
-                     Headshop  ↷
+                     Headshop ↯ 
                   </h3>
-                  {/* <!--  ↯  --> */}
+                  {/* <!--  ↷  --> */}
                   <section onMouseLeave={e => handleHeadshopLeave(e)} >
                      <ul className={`flex ${miniHeadshop} flex-col p-3 border-t-2 border-red-700 
                         md:bg-slate-100 md:absolute`}>
@@ -90,7 +90,7 @@ export default function Header() {
 
                <section className="mb-3 md:mb-0 md:mx-2">
                   <h3 onMouseOver={handleHoverKits} id="btnMenu2" className="uppercase p-1 hover:cursor-pointer hover:text-red-600 transition-none">
-                     Kits Prontos  ↷
+                     Kits Prontos  ↯
                   </h3>
                   <section onMouseLeave={handleKitsLeave}>
                      <ul id="miniMenu2" className={`flex ${miniKits} flex-col p-3 border-t-2 border-red-700
@@ -105,7 +105,7 @@ export default function Header() {
 
                <section className="mb-3 md:mb-0 md:mx-2">
                   <h3 onMouseOver={handleHoverOutlet} id="btnMenu3" className="uppercase p-1 hover:cursor-pointer hover:text-red-600 transition-none">
-                     Outlet  ↷
+                     Outlet  ↯
                   </h3>
                   <section onMouseLeave={handleOutletLeave}>
                      <ul id="miniMenu3" className={`uppercase flex ${miniOutlet} flex-col p-3 border-t-2 border-red-700
