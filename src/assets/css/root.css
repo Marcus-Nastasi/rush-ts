@@ -1,0 +1,55 @@
+/* Cat */
+#catOne {
+   background-image: url('../assets/img/kits/fundo.jpg');
+   background-position: center;
+   background-size: cover;
+   box-shadow: inset 0 0 300px 30px;
+}
+#catTwo {
+   background-image: url('../assets//arts/bandeja.jpg');
+   background-position: center;
+   background-size: cover;
+   box-shadow: inset 0 0 300px 30px;
+}
+#catThre {
+   background-image: url('../assets/img/kits/fundo2.jpeg');
+   background-position: center;
+   background-size: cover;
+   box-shadow: inset 0 0 300px 30px;
+}
+#catFuor {
+   background-image: url('../assets/img/sedas/sedas.jpg');
+   background-position: center;
+   background-size: cover;
+   box-shadow: inset 0 0 300px 30px;
+}
+#catFive {
+   background-image: url('../assets/img/sesh.jpg');
+   background-position: center;
+   background-size: cover;
+   box-shadow: inset 0 0 300px 30px;
+}
+
+/* Hovers 
+----------*/
+#catOne:hover {
+   box-shadow: inset 0 0 500px 90px;
+   transition: all 500ms ease-in-out;
+}
+#catTwo:hover {
+   box-shadow: inset 0 0 500px 90px;
+   transition: all 500ms ease-in-out;
+}
+#catThre:hover {
+   box-shadow: inset 0 0 500px 90px;
+   transition: all 500ms ease-in-out;
+}
+#catFuor:hover {
+   box-shadow: inset 0 0 500px 90px;
+   transition: all 500ms ease-in-out;
+}
+#catFive:hover {
+   box-shadow: inset 0 0 500px 90px;
+   transition: all 500ms ease-in-out;
+}
+
