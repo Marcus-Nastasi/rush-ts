@@ -7,7 +7,6 @@
     "build": "tsc && vite build -w",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "dev": "nodemon server.js -w",
     "tw": "npx tailwindcss -i ./src/assets/css/inp.css -o ./src/assets/css/out.css -w"
   },
   "dependencies": {
@@ -15,9 +14,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
     "fa-icons": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -33,7 +30,6 @@
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "nodemon": "^3.1.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"

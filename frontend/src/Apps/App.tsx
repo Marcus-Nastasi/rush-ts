@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "../components/Generics/Header/Header";
 import BanOne from "../components/Home/Banner/BanOne";
 import BanTwo from "../components/Home/Banner/BanTwo";
