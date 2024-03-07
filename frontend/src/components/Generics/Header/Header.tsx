@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { FaBars } from "react-icons/fa6";
 import { ClockLoader } from "react-spinners";
@@ -28,18 +29,13 @@ export default function Header() {
    return (
    <>
       <header style={headerContainerCss} className={headerContainerStyle}>
-
          <section className="flex justify-between items-center">
-
             <section className="flex items-center p-5 w-fit">
-
                <section className="mr-2">
-
                   <ClockLoader
                      size={20}
                      color="#B91C1D"   
                   />
-
                </section>
 
                <p className="ml-2 mt-1 text-xl text-red-700 font-semibold italic">
@@ -47,25 +43,20 @@ export default function Header() {
                      Rush
                   </a>
                </p>
-
             </section>
 
             <section>
-
                <FaBars
                   onClick={handleClickMenuBar}
                   className="w-10 mr-3 mt-1 text-2xl text-red-700 hover:cursor-pointer hover:text-red-500 md:hidden" 
                />
-
             </section>
-
          </section>
 
          <nav className={`${menu} h-fit w-screen flex flex-col p-10 items-center text-center text-red-700  bg-slate-100 text-xl 
-            md:text-sm md:bg-transparent md:flex md:flex-row md:justify-between md:absolute md:top-3.5 md:p-0 md:w-10/12 md:left-28 2xl:w-11/12`}>
-
+            md:text-sm md:bg-transparent md:flex md:flex-row md:justify-between md:absolute md:top-3.5 md:p-0 md:w-10/12 md:left-28 2xl:w-11/12`}
+         >
             <section className="flex flex-col md:flex-row md:mt-2.5">
-
                <section className="mb-5 md:mb-0 md:mx-2">
                   <h3 className="p-1 text-red-600 hover:text-red-700 hover:cursor-pointer transition-none">
                      <a className="uppercase" href="">Monte seu kit!</a>
@@ -121,7 +112,6 @@ export default function Header() {
                <section className="md:mx-2">
                   <h3 className="uppercase mb-3 p-1 hover:cursor-pointer hover:text-red-600 transition-none md:mb-0">Quem somos</h3>
                </section>
-
             </section>
 
             <section className="flex items-center border-t-2 border-b-2 border-red-800 md:self-start">
