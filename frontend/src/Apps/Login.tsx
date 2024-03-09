@@ -10,7 +10,7 @@ export default function Login() {
             <Header />
          </section>
 
-         <section className='bg-slate-400 min-h-screen max-h-fit'>
+         <section className='flex items-center justify-center min-h-screen max-h-fit'>
             <Forms />
          </section>
 
