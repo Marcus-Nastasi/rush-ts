@@ -117,9 +117,11 @@ export default function Header() {
             <section className="flex items-center border-t-2 border-b-2 border-red-800 md:self-start">
 
                <section>
-                  <FaUser 
-                     className="text-xl m-2 hover:cursor-pointer hover:text-red-600 md:text-2xl" 
-                  />
+                  <a href="/login">
+                     <FaUser 
+                        className="text-xl m-2 hover:cursor-pointer hover:text-red-600 md:text-2xl" 
+                     />
+                  </a>
                </section>
 
                <section>

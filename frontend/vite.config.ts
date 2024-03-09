@@ -8,7 +8,8 @@ export default defineConfig({
    rollupOptions: {
      input: {
          main: 'index.html',
-         cart: 'pages/cart.html'
+         cart: 'pages/cart.html',
+         login: 'pages/login.html'
       },
       output: {
          dir: './dist'
