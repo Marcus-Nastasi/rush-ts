@@ -10,7 +10,13 @@ export default function Login() {
             <Header />
          </section>
 
-         <section className='flex items-center justify-center pt-32 min-h-screen max-h-fit'>
+         <section className='flex justify-center w-screen pt-32'>
+            <h2 className='font-semibold text-3xl text-center text-red-800'>
+               Faça o cadastro ou login abaixo
+            </h2>
+         </section>
+
+         <section className='flex items-center justify-center pt-10 min-h-screen max-h-fit'>
             <Forms />
          </section>
 

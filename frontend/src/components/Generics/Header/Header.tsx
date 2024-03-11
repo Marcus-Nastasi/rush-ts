@@ -11,18 +11,14 @@ export default function Header() {
    const [ miniKits, setMiniKits ] = useState('hidden');
    const [ miniOutlet, setMiniOutlet ] = useState('hidden');
 
-   // click menu bar
    const handleClickMenuBar = () => (menu === 'hidden') ? setMenu('') : setMenu('hidden');
 
-   // Headshop menu   
    const handleHoverHeadshop = () => (miniHeadshop === 'hidden') ? setHeadshop('') : setHeadshop('hidden');
    const handleHeadshopLeave = (e: any) => (!e.target.classList.contains('hidden')) ? setHeadshop('hidden') : 0;
 
-   // Kits Prontos menu
    const handleHoverKits = () => (miniKits === 'hidden') ? setMiniKits('') : setMiniKits('hidden');
    const handleKitsLeave = (e: any) => (!e.target.classList.contains('hidden')) ? setMiniKits('hidden') : 0;
 
-   // Outlet menu
    const handleHoverOutlet = () => (miniOutlet === 'hidden') ? setMiniOutlet('') : setMiniOutlet('hidden');
    const handleOutletLeave = (e: any) => (!e.target.classList.contains('hidden')) ? setMiniOutlet('hidden') : 0;
 
