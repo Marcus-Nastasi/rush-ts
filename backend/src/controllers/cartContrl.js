@@ -1,2 +1,2 @@
-exports.index = (req, res) => res.render('pages/cart');
+exports.cartPage = (req, res) => res.render('pages/cart');
 

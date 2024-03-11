@@ -3,8 +3,8 @@ import React from "react";
 export default function Forms() {
    return(
       <>
-         <section className='flex flex-col w-screen rounded-md bg-slate-100'>
-            <section className='p-10'>
+         <section className='flex flex-col w-screen rounded-md bg-slate-100 sm:flex-row sm:justify-center'>
+            <section className='p-10 lg:w-2/6'>
                <form action="" className="flex flex-col">
                   <h2 className='mb-3 underline text-center text-3xl font-semibold text-red-800'>
                      Cadastro
@@ -111,11 +111,12 @@ export default function Forms() {
             </section>
 
             {/* Cadastro */}
-            <div className="self-center w-11/12 h-1 rounded-2xl bg-slate-900">
+            <div 
+               className="self-center w-11/12 h-1 rounded-2xl bg-slate-900 sm:w-1 sm:h-screen">
             </div>
             {/* Login */}
 
-            <section className='p-10'>
+            <section className='p-10 lg:w-2/6'>
                <form action="" className="flex flex-col">
                   <h2 className='mb-3 underline text-center text-3xl font-semibold text-red-800'>
                      Login

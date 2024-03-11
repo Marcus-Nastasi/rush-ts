@@ -5,7 +5,7 @@ import Forms from '../components/Login/FormLog/Forms';
 
 export default function Login() {
    return(
-      <div>
+      <div className=' overflow-x-hidden'>
          <section className=' absolute top-0 left-0'>
             <Header />
          </section>
