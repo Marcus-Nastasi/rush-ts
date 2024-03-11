@@ -3,10 +3,10 @@ import React from "react";
 export default function Forms() {
    return(
       <>
-         <section className='flex flex-col w-screen rounded-md'>
+         <section className='flex flex-col w-screen rounded-md bg-slate-100'>
             <section className='p-10'>
                <form action="" className="flex flex-col">
-                  <h2 className='mb-3 text-center text-3xl font-semibold text-red-800'>
+                  <h2 className='mb-3 underline text-center text-3xl font-semibold text-red-800'>
                      Cadastro
                   </h2>
 
@@ -117,7 +117,7 @@ export default function Forms() {
 
             <section className='p-10'>
                <form action="" className="flex flex-col">
-                  <h2 className='mb-3 text-center text-3xl font-semibold text-red-800'>
+                  <h2 className='mb-3 underline text-center text-3xl font-semibold text-red-800'>
                      Login
                   </h2>
 

@@ -63,7 +63,7 @@ export default function Header() {
                   <h3 onMouseOver={handleHoverHeadshop} id="btnMenu1" className="uppercase p-1 hover:cursor-pointer hover:text-red-600 transition-none">
                      Headshop ↯ 
                   </h3>
-                  {/* <!--  ↷  --> */}
+
                   <section onMouseLeave={e => handleHeadshopLeave(e)} >
                      <ul className={`flex ${miniHeadshop} flex-col p-3 border-t-2 border-red-700 
                         md:bg-slate-100 md:absolute`}>
@@ -121,9 +121,11 @@ export default function Header() {
                </section>
 
                <section>
-                  <FaCartShopping 
-                     className="text-xl m-2 hover:cursor-pointer hover:text-red-600 md:text-2xl" 
-                  />
+                  <a href="/cart">
+                     <FaCartShopping 
+                        className="text-xl m-2 hover:cursor-pointer hover:text-red-600 md:text-2xl" 
+                     />
+                  </a>
                </section>
 
             </section>
