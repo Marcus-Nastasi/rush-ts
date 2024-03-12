@@ -36,14 +36,14 @@ export default function Cart() {
                <section className='flex justify-evenly w-full h-fit p-4 border-t border-red-900'>
                   <button 
                      type="button" 
-                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-600 text-slate-900'
+                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-600 text-slate-100'
                   >
                      Adicionar mais itens
                   </button>
 
                   <button 
                      type="button" 
-                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-700 text-slate-900'
+                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-700 text-slate-100'
                   >
                      Continuar compra
                   </button>
