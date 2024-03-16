@@ -22,7 +22,9 @@ export default function ItensCart({ nome, preco }) {
 
       setQauntity(valor);
 
-      return localStorage.setItem(nome, data);
+      localStorage.removeItem(nome);
+      setTimeout(() => localStorage.setItem(nome, data), 300);
+      return ;
    };
 
    return(

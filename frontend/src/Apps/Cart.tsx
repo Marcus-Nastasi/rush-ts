@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Generics/Header/Header';
 import ItensCart from '../components/Cart/itensCart/ItensCart';
 import Footer from '../components/Generics/Footer/Foot';
 
 export default function Cart() {
+   const [ itens, setItens ] = useState([]);
+
+   useEffect(() => {
+      function getVals() {
+         const data = { ...localStorage };
+         const keys = Object.keys(data);
+         const itens: Array<string> = [];
+         
+         for(let i of keys) itens.push(`${i} | ${localStorage.getItem(i)}`);
+         
+         return setItens(itens);
+      };
+      getVals();
+   });
+
    return(
       <div className=' overflow-x-hidden'>
          <section className='absolute top-0 left-0'>
@@ -28,10 +43,20 @@ export default function Cart() {
                   </button>
                </section>
 
-               <ItensCart
-                  nome={'SEDA BEM BOLADO BROWN KING SIZE SABOTAGE'}
-                  preco={'R$4,50'} 
-               />
+               {itens.map(item => {
+                  const itemString: string = String(item);
+                  const name: string = itemString.split('|')[0];
+                  const price: string = itemString.split('|')[1].split('.')[1];
+
+                  return(
+                     <>
+                        <ItensCart
+                           nome={name}
+                           preco={price} 
+                        />
+                     </>
+                  );
+               })}
 
                <section className='flex justify-evenly w-full h-fit p-4 border-t border-red-900'>
                   <button 
