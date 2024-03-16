@@ -40,10 +40,10 @@ export default function ItensCart({ nome, preco }) {
 
                   <td>
                      <section className='p-1'>
-                        <input 
-                           type="number" 
+                        <input
                            value={quantity} 
-                           onChange={handleVal} 
+                           onChange={handleVal}
+                           type="number" 
                            className='mx-3 w-10 border border-black' 
                         />
                      </section>
