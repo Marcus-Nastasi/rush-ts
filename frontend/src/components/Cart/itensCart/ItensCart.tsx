@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { FaTrash } from "react-icons/fa6";
 
-export default function ItensCart({ nome, preco }) {
-   const [ quantity, setQauntity ] = useState('0');
+export default function ItensCart({ nome, preco, qnt }) {
+   const [ quantity, setQauntity ] = useState(0);
 
    useEffect(() => {
-      function getVals() {
-         const val = localStorage.getItem(nome);
+      function getQuantity() {
+         // const item = localStorage.getItem();
 
-         const quantity = (val?.split('.')[0]);
+         // const quantity = (item?.split('.')[0]);
 
-         return (val ? setQauntity(String(quantity)) : 0);
+         return setQauntity(Number(qnt));
       };
-      getVals();
-   });
+      getQuantity();
+   }, []);
 
    function handleVal(e: any) {
       const valor = e.target.value;
@@ -22,8 +22,8 @@ export default function ItensCart({ nome, preco }) {
 
       setQauntity(valor);
 
-      localStorage.removeItem(nome);
-      setTimeout(() => localStorage.setItem(nome, data), 300);
+      if(localStorage.getItem('BONG')) localStorage.setItem(nome, data);
+
       return ;
    };
 
@@ -43,7 +43,7 @@ export default function ItensCart({ nome, preco }) {
                   <td>
                      <section className='p-1'>
                         <input
-                           value={quantity} 
+                           value={quantity}
                            onChange={handleVal}
                            type="number" 
                            className='mx-3 w-10 border border-black' 
