@@ -6,9 +6,9 @@ export default function ItensCart({ nome, preco, qnt }) {
 
    useEffect(() => {
       function getQuantity() {
-         // const item = localStorage.getItem();
+         const item = localStorage.getItem();
 
-         // const quantity = (item?.split('.')[0]);
+         const quantity = (item?.split('.')[0]);
 
          return setQauntity(Number(qnt));
       };
