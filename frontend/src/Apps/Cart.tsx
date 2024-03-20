@@ -31,7 +31,7 @@ export default function Cart() {
 
          <section className='flex justify-center mt-32 w-screen min-h-fit'>
 
-            <section className='w-11/12 h-fit border-t-4 border-red-900 rounded-3xl'>
+            <section className='w-11/12 h-fit rounded-3xl border-t-4 bg-slate-50 border-red-900'>
 
                <section className='flex justify-evenly items-center p-4'>
                   <h1 className='p-1 text-2xl font-semibold uppercase text-slate-900'>
