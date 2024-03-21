@@ -1,4 +1,4 @@
-import React, { useState, useEffect, SetStateAction } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Generics/Header/Header';
 import ItensCart from '../components/Cart/itensCart/ItensCart';
 import Footer from '../components/Generics/Footer/Foot';
@@ -33,14 +33,16 @@ export default function Cart() {
 
             <section className='w-11/12 h-fit rounded-t-3xl bg-slate-50 border-t-4 border-red-900'>
 
-               <section className='flex justify-evenly items-center p-4'>
-                  <h1 className='p-1 text-2xl font-semibold uppercase text-slate-900'>
-                     Carrinho
-                  </h1>
+               <section className='flex justify-center'>
+                  <section className='flex justify-between items-center self-center w-11/12 p-4'>
+                     <h1 className='p-1 text-2xl font-semibold uppercase text-slate-900 md:text-3xl lg:text-4xl'>
+                        Carrinho
+                     </h1>
 
-                  <button type="button" className='text-sm text-red-500 hover:text-red-700 hover:underline'>
-                     Limpar carrinho
-                  </button>
+                     <button type="button" className='text-sm text-red-500 hover:text-red-700 hover:underline'>
+                        Limpar carrinho
+                     </button>
+                  </section>
                </section>
 
                {itens.map(item => {

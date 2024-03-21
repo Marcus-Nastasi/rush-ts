@@ -29,11 +29,10 @@ export default function ItensCart({ nome, preco, qnt }) {
 
    return(
       <>
-         <section className='flex flex-col justify-between py-10 border-t border-red-900 md:flex-row'>
+         <section className='flex flex-col justify-between py-10 border-t border-red-900'>
 
             <table className='flex justify-center w-full'>
-
-               <tr className="flex items-center justify-between w-screen md:w-11/12">
+               <tr className="flex items-center justify-between w-screen sm:w-11/12 md:w-11/12 lg:w-10/12">
                   <td className="md:w-5/12">
                      <section className='p-1 ml-5 text-sm'>
                         {nome}
@@ -52,9 +51,9 @@ export default function ItensCart({ nome, preco, qnt }) {
                   </td>
 
                   <td>
-                  <section className='p-1'>
-                     {preco}
-                  </section>
+                     <section className='p-1'>
+                        {preco}
+                     </section>
                   </td>
 
                   <td>
