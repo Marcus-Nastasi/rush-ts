@@ -45,24 +45,26 @@ export default function Cart() {
                   </section>
                </section>
 
-               {itens.map(item => {
-                  if(item) {
-                     const itemString: string = String(item);
-                     const name: string = itemString.split('|')[0];
-                     const price: string = itemString.split('|')[1].split('.')[1];
-                     const qnt: string = itemString.split('|')[1].split('.')[0];
+               <section className=''>
+                  {itens.map(item => {
+                     if(item) {
+                        const itemString: string = String(item);
+                        const name: string = itemString.split('|')[0];
+                        const price: string = itemString.split('|')[1].split('.')[1];
+                        const qnt: string = itemString.split('|')[1].split('.')[0];
 
-                     return(
-                        <>
-                           <ItensCart
-                              nome={name}
-                              preco={price}
-                              qnt={qnt}
-                           />
-                        </>
-                     ); 
-                  }
-               })}
+                        return(
+                           <>
+                              <ItensCart
+                                 nome={name}
+                                 preco={price}
+                                 qnt={qnt}
+                              />
+                           </>
+                        ); 
+                     }
+                  })}
+               </section>
 
                <section className='flex justify-evenly w-full h-fit p-4 border-t border-red-900'>
                   <button 
