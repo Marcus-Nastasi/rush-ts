@@ -2,111 +2,111 @@ import React from "react";
 
 export default function FormCadastro() {
    return(
-      <section className='p-10 lg:w-2/6'>
-         <form action="" className="flex flex-col">
-            <h2 className='mb-3 underline text-center text-3xl font-semibold text-red-800'>
-               Cadastro
-            </h2>
+      <section className='flex flex-col w-screen p-1 rounded-2xl border-t-4 border-red-900 bg-gray-50 sm:w-11/12 md:w-10/12 lg:w-9/12 xl:w-8/12 2xl:w-7/12'>
+         <section className='lg:flex lg:flex-col lg:items-center p-5'>
+            <form action="" className="flex flex-col mb-9 lg:w-11/12">
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="nameRegister">
+                     nome:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="nameCadastro">
-                  Nome:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="text" 
+                     name="nameRegister" 
+                     id="nameRegister"  
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="text" 
-                  name="name" 
-                  id="nameCadastro" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="mailRegister">
+                     e-mail:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="mailCadastro">
-                  E-mail:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="email" 
+                     name="mailRegister" 
+                     id="mailRegister" 
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="email" 
-                  name="mail" 
-                  id="mailCadastro" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="bornRegister">
+                     data de nascimento:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="nascimento">
-                  Data de nascimento:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="date" 
+                     name="bornRegister" 
+                     id="bornRegister"
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="date" 
-                  name="nascimento" 
-                  id="nascimento" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="cpfRegister">
+                     cpf:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="cpfCadastro">
-                  CPF:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="text" 
+                     name="cpfRegister" 
+                     id="cpfRegister"
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="text" 
-                  name="text" 
-                  id="cpfCadastro" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="adressRegister">
+                     endereço:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="endCadastro">
-                  Endereço:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="text" 
+                     name="adressRegister" 
+                     id="adressRegister"
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="text" 
-                  name="endereco" 
-                  id="endCadastro" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="passwordRegister">
+                     senha:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="senhaCadastro">
-                  Senha:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="password" 
+                     name="passwordRegister" 
+                     id="passwordRegister"
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="password" 
-                  name="passCadastro" 
-                  id="senhaCadastro" 
-               />
-            </section>
+               <section className="flex flex-col m-3">
+                  <label className="mb-1 text-xl font-normal text-slate-800 lg:text-2xl" htmlFor="passwordConfirm">
+                     confirmar senha:
+                  </label>
 
-            <section className="flex flex-col m-3">
-               <label className="mb-2 text-2xl font-semibold text-red-800" htmlFor="senhaCadastro">
-                  Confirmar senha:
-               </label>
+                  <input
+                     className="p-1.5 rounded-md shadow-lg shadow-slate-400 lg:p-2"
+                     type="password" 
+                     name="passCadastro" 
+                     id="passwordConfirm"
+                  />
+               </section>
 
-               <input
-                  className="p-2 rounded-sm border border-red-600 focus:outline-red-600"
-                  type="password" 
-                  name="passCadastro" 
-                  id="senhaCadastro" 
-               />
-            </section>
-
-            <button 
-               className="mt-10 py-2 px-5 w-fit self-center rounded-md font-semibold text-slate-100 bg-slate-900" 
-               type="submit"
-            >
-               Cadastrar
-            </button>
-         </form>
+               <button
+                  className="mt-10 py-2.5 w-11/12 self-center rounded-md font-medium text-md text-slate-100 bg-slate-900 hover:bg-slate-950 md:w-10/12 md:text-lg lg:text-xl lg:w-9/12 lg:py-3" 
+                  type="submit"
+               >
+                  Cadastrar-se
+               </button>
+            </form>
+         </section>
       </section>
    );
 };
+
+
 
