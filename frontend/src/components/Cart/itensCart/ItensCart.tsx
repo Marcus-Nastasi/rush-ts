@@ -15,7 +15,7 @@ export default function ItensCart({ nome, preco, qnt }) {
       getQuantity();
    }, []);
 
-   function handleVal(e: any) {
+   function handleVal(e: any): void {
       const valor = e.target.value;
 
       const data = `${valor}.${preco}`;
@@ -24,7 +24,7 @@ export default function ItensCart({ nome, preco, qnt }) {
 
       if(localStorage.getItem('BONG')) localStorage.setItem(nome, data);
 
-      return ;
+      return;
    };
 
    return(
