@@ -49,9 +49,9 @@ export default function Cart() {
                   {itens.map(item => {
                      if(item) {
                         const itemString: string = String(item);
-                        const name: string = itemString.split('|')[0];
-                        const price: string = itemString.split('|')[1].split('.')[1];
-                        const qnt: string = itemString.split('|')[1].split('.')[0];
+                        const name: string = itemString.split('|')[0].trim();
+                        const price: string = itemString.split('|')[1].split('.')[1].trim();
+                        const qnt: string = itemString.split('|')[1].split('.')[0].trim();
 
                         return(
                            <>
@@ -69,14 +69,14 @@ export default function Cart() {
                <section className='flex justify-evenly w-full h-fit p-4 border-t border-red-900'>
                   <button 
                      type="button" 
-                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-600 text-slate-100'
+                     className='m-1 px-3 py-1 text-sm uppercase rounded-md bg-green-600 text-slate-100 md:py-1.5 hover:bg-green-700'
                   >
                      Adicionar mais itens
                   </button>
 
                   <button 
                      type="button" 
-                     className='m-1 px-3 py-0.5 text-sm uppercase bg-green-700 text-slate-100'
+                     className='m-1 px-3 py-1 text-sm uppercase rounded-md bg-green-700 text-slate-100 md:py-1.5 hover:bg-green-600'
                   >
                      Continuar compra
                   </button>

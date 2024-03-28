@@ -6,21 +6,20 @@ export default function ItensCart({ nome, preco, qnt }) {
 
    useEffect(() => {
       function getQuantity() {
-         // const item = localStorage.getItem();
+         const item = localStorage.getItem(nome);
 
-         // const quantity = (item?.split('.')[0]);
+         const quantity = (item?.split('.')[0]);
 
-         return setQauntity(Number(qnt));
+         return setQauntity(Number(quantity));
       };
       getQuantity();
    }, []);
 
    function handleVal(e: any): void {
-      const valor = e.target.value;
+      const valor: string = e.target.value;
+      const data: string = `${valor}.${preco}`;
 
-      const data = `${valor}.${preco}`;
-
-      setQauntity(valor);
+      setQauntity(parseInt(valor));
 
       if(localStorage.getItem('BONG')) localStorage.setItem(nome, data);
 
@@ -30,7 +29,6 @@ export default function ItensCart({ nome, preco, qnt }) {
    return(
       <>
          <section className='flex flex-col justify-between py-10 border-t border-red-900'>
-
             <table className='flex justify-center w-full'>
                <tr className="flex items-center justify-between w-screen sm:w-11/12 md:w-11/12 lg:w-10/12">
                   <td className="md:w-5/12">
@@ -65,7 +63,6 @@ export default function ItensCart({ nome, preco, qnt }) {
                   </td>
                </tr>
             </table>
-            
          </section>
       </>
    );
