@@ -9,19 +9,17 @@ export default function Login() {
    const [ underlineLog, setUnderlineLog ] = useState('');
    const [ underlineCad, setUnderlineCad ] = useState('underline');
 
-   function handleWichForm(e: any) {
+   function handleWichForm(e: any): void {
       if(e.target.innerText == 'Login') {
          setCadOrLog(false);
          setUnderlineCad('');
          setUnderlineLog('underline');
-
          return;
       }
 
       setCadOrLog(true);
       setUnderlineLog('');
       setUnderlineCad('underline');
-
       return;
    };
 
@@ -50,7 +48,9 @@ export default function Login() {
          </div>
 
          <section className='flex justify-center pt-3 max-h-fit'>
+
             {cadOrLog ? <FormCadastro /> : <FormLogin />}
+
          </section>
 
          <section>

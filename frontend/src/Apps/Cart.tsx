@@ -12,12 +12,23 @@ export default function Cart() {
          const keys = Object.keys(data);
          const itens: Array<string> = [];
 
-         for(let i of keys) itens.push(`${i} | ${localStorage.getItem(i)}`);
+         for(let i of keys) itens.push(`${i}|${localStorage.getItem(i)}`);
 
          return setItens(itens);
       };
       getVals();
    }, []);
+
+   function handleClearStorage(): void {
+      var msg: boolean = confirm("Você tem certeza de que deseja apagar todos os itens do carrinho?");
+      if(msg) {
+         localStorage.clear();
+         window.open('/cart', '_self');
+         return;
+      }
+
+      return;
+   };
 
    return(
       <div className=' overflow-x-hidden bg-slate-200'>
@@ -39,7 +50,10 @@ export default function Cart() {
                         Carrinho
                      </h1>
 
-                     <button type="button" className='text-sm text-red-500 hover:text-red-700 hover:underline'>
+                     <button
+                        onClick={handleClearStorage} 
+                        type="button" 
+                        className='text-sm text-red-500 hover:text-red-700 hover:underline'>
                         Limpar carrinho
                      </button>
                   </section>
@@ -48,10 +62,11 @@ export default function Cart() {
                <section className=''>
                   {itens.map(item => {
                      if(item) {
-                        const itemString: string = String(item);
-                        const name: string = itemString.split('|')[0].trim();
-                        const price: string = itemString.split('|')[1].split('.')[1].trim();
-                        const qnt: string = itemString.split('|')[1].split('.')[0].trim();
+                        const [ name, price, qnt ]: string[] = [
+                           item.split('|')[0], 
+                           item.split('|')[1].split('.')[1], 
+                           item.split('|')[1].split('.')[0]
+                        ];
 
                         return(
                            <>
@@ -63,6 +78,12 @@ export default function Cart() {
                            </>
                         ); 
                      }
+
+                     return(
+                        <div>
+                           Adicione itens ao carrinho para continuar a compra.
+                        </div>
+                     );
                   })}
                </section>
 
@@ -71,7 +92,9 @@ export default function Cart() {
                      type="button" 
                      className='m-1 px-3 py-1 text-sm uppercase rounded-md bg-green-600 text-slate-100 md:py-1.5 hover:bg-green-700'
                   >
-                     Adicionar mais itens
+                     <a href="/">
+                        Adicionar mais itens
+                     </a>
                   </button>
 
                   <button 

@@ -8,7 +8,7 @@ export default function ItensCart({ nome, preco, qnt }) {
       function getQuantity() {
          const item = localStorage.getItem(nome);
 
-         const quantity = (item?.split('.')[0]);
+         const quantity = item?.split('.')[0];
 
          return setQauntity(Number(quantity));
       };
@@ -21,7 +21,18 @@ export default function ItensCart({ nome, preco, qnt }) {
 
       setQauntity(parseInt(valor));
 
-      if(localStorage.getItem('BONG')) localStorage.setItem(nome, data);
+      localStorage.setItem(nome, data);
+
+      return;
+   };
+
+   function handleDeleteItem(): void {
+      var msg: boolean = confirm("Você tem certeza que deseja apagar esse item?"); 
+      if(msg) {
+         localStorage.removeItem(nome);
+         window.open('/cart', '_self');
+         return;
+      }
 
       return;
    };
@@ -57,6 +68,7 @@ export default function ItensCart({ nome, preco, qnt }) {
                   <td>
                      <section className="p-1 mr-1 md:mr-7 lg:mr-6 xl:mr-0">
                         <FaTrash
+                           onClick={handleDeleteItem}
                            className=" text-rose-400 hover:text-red-600 hover:cursor-pointer"
                         />
                      </section>

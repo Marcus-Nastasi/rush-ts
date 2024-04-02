@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Card({ image, nome, preco }) {
+   const item: string = `${1}.${preco}`;
+
+   function setItemsToStorage(e: any): void {
+      localStorage.setItem(nome, item);
+      return;
+   };
+
    return(
       <>
          <section className="flex flex-col items-center p-4 rounded-2xl">
@@ -20,7 +27,10 @@ export default function Card({ image, nome, preco }) {
                   {preco}
                </h4>
 
-               <button className="flex uppercase p-2 mt-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
+               <button
+                  onClick={setItemsToStorage} 
+                  className="flex uppercase p-2 mt-2 rounded-xl bg-slate-900 text-white hover:bg-slate-800"
+               >
                   <span className="mr-2">
                      comprar
                   </span>
