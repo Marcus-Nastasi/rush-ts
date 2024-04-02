@@ -1,18 +1,34 @@
 import React, { useState, useEffect } from "react";
 
 export default function Card({ image, nome, preco }) {
+   const [ popUp, setPopUp ] = useState('hidden');
    const item: string = `${1}.${preco}`;
 
-   function setItemsToStorage(e: any): void {
+   function setItemsToStorage(): void {
       localStorage.setItem(nome, item);
+      popUpItemAdded();
+   }
+
+   function popUpItemAdded() {
+      setPopUp('');
+      setTimeout(() => setPopUp('hidden'), 3000);
       return;
    };
 
    return(
       <>
+         <div className="flex justify-center items-center w-screen h-20 fixed top-28 right-0.5">
+            <section 
+               className={`${popUp} w-8/12 h-16 flex items-center justify-center rounded-lg bg-green-300 md:w-6/12 lg:w-5/12`}
+            >
+               <p className="text-xl">Item adicionado!</p>
+            </section>
+         </div>
+
          <section className="flex flex-col items-center p-4 rounded-2xl">
             <section className="py-5">
-               <img 
+               <img
+                  onClick={setItemsToStorage}
                   className="rounded-3xl transition-all ease-in-out duration-500 hover:shadow-xl hover:shadow-slate-300 hover:cursor-pointer" 
                   src={image} 
                />
@@ -42,4 +58,6 @@ export default function Card({ image, nome, preco }) {
       </>
    );
 };
+
+
 
