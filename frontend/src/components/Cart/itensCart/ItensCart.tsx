@@ -16,15 +16,41 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
       handleSubTotal();
    }, []);
 
-   function handleStorageItem(e: any): void {
-      const valor: string = e.target.value;
-      const data: string = `${valor}.${preco}`;
 
-      setQauntity(String(valor));
+   function handleSubTotal(): void {
+      var item: string | null = localStorage.getItem(nome);
+      var qnt: number = Number(item?.split('.')[0]);
+      var price: number = Number(item?.split('$')[1].replace(',', '.'));
 
+      setSubTotal(String((qnt * price).toFixed(2)).replace('.', ','));
+
+      return clbkTotalSum();
+   };
+
+   function handleClickPlus(e: any): void {
+      var nmr:number = Number(quantity);
+      const data: string = `${nmr+1}.${preco}`;
+
+      setQauntity(String(nmr + 1));
       localStorage.setItem(nome, data);
 
       return handleSubTotal();
+   };
+
+
+   function handleClickMinus(e: any): void {
+      var nmr:number = Number(quantity);
+
+      if(nmr > 0) {
+         const data: string = `${nmr-1}.${preco}`;
+
+         setQauntity(String(nmr - 1));
+         localStorage.setItem(nome, data);
+   
+         return handleSubTotal();
+      }
+      
+      return;
    };
 
    function handleDeleteItem(): void {
@@ -37,16 +63,6 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
       }
 
       return;
-   };
-
-   function handleSubTotal(): void {
-      var item: string | null = localStorage.getItem(nome);
-      var qnt: number = Number(item?.split('.')[0]);
-      var price: number = Number(item?.split('$')[1].replace(',', '.'));
-
-      setSubTotal(String((qnt * price).toFixed(2)).replace('.', ','));
-
-      return clbkTotalSum();
    };
 
    return(
@@ -65,19 +81,23 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
                         <section className='p-1 flex items-center'>
                            <span>
                               <FaMinus
+                                 onClick={handleClickMinus}
                                  className=" hover:cursor-pointer"
                               />
                            </span>
 
                            <input
+                              id="inputQuantity"
                               value={quantity}
-                              onChange={handleStorageItem}
                               type="number"
+                              min={1}
+                              readOnly={true}
                               className='mx-3 w-10 text-center border border-black' 
                            />
 
                            <span>
                               <FaPlus
+                                 onClick={handleClickPlus}
                                  className=" hover:cursor-pointer"
                               />
                            </span>
