@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { FaTrash } from "react-icons/fa6";
+import { FaTrash, FaPlus, FaMinus } from "react-icons/fa6";
 
-export default function ItensCart({ nome, preco, qnt }) {
-   const [ quantity, setQauntity ] = useState(0);
+export default function ItensCart({ nome, preco, clbkTotalSum }) {
+   const [ quantity, setQauntity ] = useState('');
+   const [ subTotal, setSubTotal ] = useState('');
 
    useEffect(() => {
       function getQuantity() {
-         const item = localStorage.getItem(nome);
+         const item: string | null = localStorage.getItem(nome);
+         const quantity: string | undefined = item?.split('.')[0];
 
-         const quantity = item?.split('.')[0];
-
-         return setQauntity(Number(quantity));
+         return setQauntity(String(quantity));
       };
       getQuantity();
+      handleSubTotal();
    }, []);
 
-   function handleVal(e: any): void {
+   function handleStorageItem(e: any): void {
       const valor: string = e.target.value;
       const data: string = `${valor}.${preco}`;
 
-      setQauntity(parseInt(valor));
+      setQauntity(String(valor));
 
       localStorage.setItem(nome, data);
 
-      return;
+      return handleSubTotal();
    };
 
    function handleDeleteItem(): void {
@@ -38,42 +39,72 @@ export default function ItensCart({ nome, preco, qnt }) {
       return;
    };
 
+   function handleSubTotal(): void {
+      var item: string | null = localStorage.getItem(nome);
+      var qnt: number = Number(item?.split('.')[0]);
+      var price: number = Number(item?.split('$')[1].replace(',', '.'));
+
+      setSubTotal(String((qnt * price).toFixed(2)).replace('.', ','));
+
+      return clbkTotalSum();
+   };
+
    return(
       <>
          <section className='flex flex-col justify-between py-10 border-t border-red-900'>
             <table className='flex justify-center w-full'>
-               <tr className="flex items-center justify-between w-screen sm:w-11/12 md:w-11/12 lg:w-10/12">
+               <tr className="flex flex-col items-center justify-between w-screen sm:w-11/12 md:flex-row md:w-11/12 lg:w-10/12">
                   <td className="md:w-5/12">
                      <section className='p-1 ml-5 text-sm'>
                         {nome}
                      </section>
                   </td>
 
-                  <td>
-                     <section className='p-1'>
-                        <input
-                           value={quantity}
-                           onChange={handleVal}
-                           type="number" 
-                           className='mx-3 w-10 border border-black' 
-                        />
-                     </section>
-                  </td>
+                  <section className="flex flex-col justify-between grow md:flex-row">
+                     <td>
+                        <section className='p-1 flex items-center'>
+                           <span>
+                              <FaMinus
+                                 className=" hover:cursor-pointer"
+                              />
+                           </span>
 
-                  <td>
-                     <section className='p-1'>
-                        {preco}
-                     </section>
-                  </td>
+                           <input
+                              value={quantity}
+                              onChange={handleStorageItem}
+                              type="number"
+                              className='mx-3 w-10 text-center border border-black' 
+                           />
 
-                  <td>
-                     <section className="p-1 mr-1 md:mr-7 lg:mr-6 xl:mr-0">
-                        <FaTrash
-                           onClick={handleDeleteItem}
-                           className=" text-rose-400 hover:text-red-600 hover:cursor-pointer"
-                        />
-                     </section>
-                  </td>
+                           <span>
+                              <FaPlus
+                                 className=" hover:cursor-pointer"
+                              />
+                           </span>
+                        </section>
+                     </td>
+
+                     <td>
+                        <section className='p-1'>
+                           item: {preco}
+                        </section>
+                     </td>
+
+                     <td>
+                        <section className='p-1'>
+                           sub total: R${subTotal}
+                        </section>
+                     </td>
+
+                     <td>
+                        <section className="p-1 mr-1 md:mr-7 lg:mr-6 xl:mr-0">
+                           <FaTrash
+                              onClick={handleDeleteItem}
+                              className="text-rose-400 hover:text-red-600 hover:cursor-pointer"
+                           />
+                        </section>
+                     </td>
+                  </section>
                </tr>
             </table>
          </section>

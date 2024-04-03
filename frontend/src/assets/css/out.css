@@ -768,6 +768,10 @@ video {
   width: 100vw;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .flex-row {
   flex-direction: row;
 }

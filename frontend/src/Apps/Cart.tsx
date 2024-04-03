@@ -36,16 +36,15 @@ export default function Cart() {
    function handleSumTotalValue(): void {
       const data = { ...localStorage };
       const keys = Object.keys(data);
-      const values: Array<number> = [];
       let sum = 0;
 
-      for(let i of keys) {
-         var item: string | null = localStorage.getItem(i);
-         var itemNumber: number = Number(item?.split('$')[1].replace(',', '.'));
-         values.push(itemNumber);
-      }
-
-      for(let i of values) sum += i;
+      keys.forEach(k => {
+         const item: string | null = localStorage.getItem(k);
+         const qnt: number = Number(item?.split('.')[0]);
+         const price: number = Number(item?.split('$')[1].replace(',', '.'));
+         
+         sum += (qnt * price);
+      });
 
       setTotalValue(String(sum.toFixed(2)).replace('.', ','));
 
@@ -87,7 +86,7 @@ export default function Cart() {
 
                      itens.map(item => {
                         if(item) {
-                           const [ name, price, qnt ]: string[] = [
+                           const [ name, price ]: string[] = [
                               item.split('|')[0], 
                               item.split('|')[1].split('.')[1], 
                               item.split('|')[1].split('.')[0]
@@ -98,7 +97,7 @@ export default function Cart() {
                                  <ItensCart
                                     nome={name}
                                     preco={price}
-                                    qnt={qnt}
+                                    clbkTotalSum={handleSumTotalValue}
                                  />
                               </>
                            ); 

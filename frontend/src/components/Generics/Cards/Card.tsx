@@ -35,9 +35,11 @@ export default function Card({ image, nome, preco }) {
             </section>
 
             <section className="flex flex-col items-center text-center">
-               <a className="text-lg uppercase hover:text-red-800" href="">
+               <p
+                  onClick={setItemsToStorage}
+                  className="text-lg uppercase hover:text-red-800">
                   {nome}
-               </a>
+               </p>
 
                <h4 className="font-semibold text-2xl mt-4 text-slate-800">
                   {preco}
