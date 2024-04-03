@@ -27,7 +27,8 @@ export default function ItensCart({ nome, preco, qnt }) {
    };
 
    function handleDeleteItem(): void {
-      var msg: boolean = confirm("Você tem certeza que deseja apagar esse item?"); 
+      var msg: boolean = confirm("Você tem certeza que deseja apagar esse item?");
+      
       if(msg) {
          localStorage.removeItem(nome);
          window.open('/cart', '_self');

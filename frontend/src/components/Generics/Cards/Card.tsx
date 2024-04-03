@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 
 export default function Card({ image, nome, preco }) {
    const [ popUp, setPopUp ] = useState('hidden');
-   const item: string = `${1}.${preco}`;
+   let item: string = `${1}.${preco}`;
 
    function setItemsToStorage(): void {
       localStorage.setItem(nome, item);
-      popUpItemAdded();
+      return popUpItemAdded();
    }
 
    function popUpItemAdded() {
