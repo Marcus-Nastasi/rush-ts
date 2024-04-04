@@ -77,7 +77,7 @@ export default function Foot() {
          <section className="fixed bottom-7 right-7 md:bottom-12 md:right-12">
             <img 
                id="whatsappButton" 
-               className="w-14 hover:cursor-pointer md:w-16 lg:w-20" 
+               className="w-10 hover:cursor-pointer md:w-12 lg:w-16" 
                src="/assets/img/icons/whatsapp.png" 
             />
          </section>

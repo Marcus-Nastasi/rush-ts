@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function Card({ image, nome, preco }) {
    const [ popUp, setPopUp ] = useState('hidden');
-   let item: string = `${1}.${preco}`;
+   var item: string = `${1}.${preco}`;
 
    function setItemsToStorage(): void {
       localStorage.setItem(nome, item);
@@ -37,7 +37,7 @@ export default function Card({ image, nome, preco }) {
             <section className="flex flex-col items-center text-center">
                <p
                   onClick={setItemsToStorage}
-                  className="text-lg uppercase hover:text-red-800">
+                  className="text-lg uppercase hover:text-red-800 cursor-pointer">
                   {nome}
                </p>
 

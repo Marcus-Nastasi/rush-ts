@@ -76,29 +76,29 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
                      </section>
                   </td>
 
-                  <section className="flex flex-col justify-between grow md:flex-row">
+                  <section className="flex flex-col justify-between items-center grow md:flex-row">
                      <td>
                         <section className='p-1 flex items-center'>
                            <span>
                               <FaMinus
+                                 size={19}
                                  onClick={handleClickMinus}
-                                 className=" hover:cursor-pointer"
+                                 className="hover:cursor-pointer"
                               />
                            </span>
 
                            <input
-                              id="inputQuantity"
                               value={quantity}
-                              type="number"
-                              min={1}
+                              type={'number'}
                               readOnly={true}
                               className='mx-3 w-10 text-center border border-black' 
                            />
 
                            <span>
                               <FaPlus
+                                 size={19}
                                  onClick={handleClickPlus}
-                                 className=" hover:cursor-pointer"
+                                 className="hover:cursor-pointer"
                               />
                            </span>
                         </section>
@@ -117,7 +117,7 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
                      </td>
 
                      <td>
-                        <section className="p-1 mr-1 md:mr-7 lg:mr-6 xl:mr-0">
+                        <section className="flex justify-center p-1 mr-1 md:mr-7 lg:mr-6 xl:mr-0">
                            <FaTrash
                               onClick={handleDeleteItem}
                               className="text-rose-400 hover:text-red-600 hover:cursor-pointer"
