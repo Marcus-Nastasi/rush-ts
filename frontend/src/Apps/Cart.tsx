@@ -93,13 +93,12 @@ export default function Cart() {
                            ];
 
                            return(
-                              <>
-                                 <ItensCart
-                                    nome={name}
-                                    preco={price}
-                                    clbkTotalSum={handleSumTotalValue}
-                                 />
-                              </>
+                              <ItensCart
+                                 key={name}
+                                 nome={name}
+                                 preco={price}
+                                 clbkTotalSum={handleSumTotalValue}
+                              />
                            ); 
                         }
                      }) :

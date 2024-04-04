@@ -16,7 +16,6 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
       handleSubTotal();
    }, []);
 
-
    function handleSubTotal(): void {
       var item: string | null = localStorage.getItem(nome);
       var qnt: number = Number(item?.split('.')[0]);
@@ -27,8 +26,8 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
       return clbkTotalSum();
    };
 
-   function handleClickPlus(e: any): void {
-      var nmr:number = Number(quantity);
+   function handleClickPlus(): void {
+      var nmr: number = Number(quantity);
       const data: string = `${nmr+1}.${preco}`;
 
       setQauntity(String(nmr + 1));
@@ -37,11 +36,10 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
       return handleSubTotal();
    };
 
+   function handleClickMinus(): void {
+      var nmr: number = Number(quantity);
 
-   function handleClickMinus(e: any): void {
-      var nmr:number = Number(quantity);
-
-      if(nmr > 0) {
+      if(nmr > 1) {
          const data: string = `${nmr-1}.${preco}`;
 
          setQauntity(String(nmr - 1));
@@ -54,7 +52,7 @@ export default function ItensCart({ nome, preco, clbkTotalSum }) {
    };
 
    function handleDeleteItem(): void {
-      var msg: boolean = confirm("Você tem certeza que deseja apagar esse item?");
+      var msg: boolean = confirm("Você tem certeza que deseja apagar esse item do carrinho?");
       
       if(msg) {
          localStorage.removeItem(nome);

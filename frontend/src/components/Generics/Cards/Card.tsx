@@ -5,6 +5,8 @@ export default function Card({ image, nome, preco }) {
    var item: string = `${1}.${preco}`;
 
    function setItemsToStorage(): void {
+      if(localStorage.getItem(nome)) return popUpItemAdded();
+
       localStorage.setItem(nome, item);
       return popUpItemAdded();
    }
